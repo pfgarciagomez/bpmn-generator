@@ -1,0 +1,14 @@
+pip install transformers
+pip install torch torchvision torchaudio
+pip install bitsandbytes
+pip install accelerate
+pip install graphviz
+pip install flask==2.01
+pip install flask-cors
+pip install streamlit
+pip install requests==2.28.2
+pip install sentence-transformers
+pip install PyPDF2
+pip install faiss-gpu
+pip install langchain-community
+sudo apt-get install graphviz
