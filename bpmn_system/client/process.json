@@ -1,0 +1,50 @@
+{
+  "flow": [
+    {
+      "type": "evento",
+      "name": "inicio"
+    },
+    {
+      "type": "tarea",
+      "name": "Revisar propuesta comercial",
+      "description": "Revisar los términos y condiciones de la propuesta comercial"
+    },
+    {
+      "type": "pasarela",
+      "name": "Evaluación de la propuesta",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Aceptar la propuesta",
+          "condición": "La propuesta es favorable para ambas partes",
+          "tareas": [
+            "Preparar contrato de negociación",
+            "Enviar contrato a la parte contraria"
+          ]
+        },
+        {
+          "name": "Rechazar la propuesta",
+          "condición": "La propuesta no es favorable para ambas partes",
+          "tareas": [
+            "Enviar carta de rechazo",
+            "Cancelar negociaciones"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bucle",
+      "name": "Negociación de contratos",
+      "condición": "Hasta que se alcance un acuerdo",
+      "tareas": [
+        "Revisar y modificar los términos y condiciones del contrato",
+        "Intercambiar propuestas hasta llegar a un acuerdo"
+      ]
+    },
+    {
+      "type": "evento",
+      "name": "fin",
+      "condicion": "Contrato firmado"
+    }
+  ]
+}
