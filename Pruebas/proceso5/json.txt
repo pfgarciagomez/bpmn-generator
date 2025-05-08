@@ -1,0 +1,66 @@
+{
+  "flow": [
+    {
+      "type": "evento",
+      "name": "inicio"
+    },
+    {
+      "type": "pasarela",
+      "name": "evaluación del equipo",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "planificación de proyectos",
+          "condición": "El equipo tiene experiencia en proyectos similares",
+          "tareas": [
+            "Revisar experiencia del equipo",
+            "Crear un plan de proyecto"
+          ]
+        },
+        {
+          "name": "revisión de habilidades",
+          "condición": "El equipo no tiene experiencia en proyectos similares",
+          "tareas": [
+            "Evaluar habilidades del equipo",
+            "Crear un plan de capacitación"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pasarela",
+      "name": "asignación de tareas",
+      "type_pasarela": "AND",
+      "ramas": [
+        {
+          "name": "asignar tareas",
+          "condición": "El equipo está listo para comenzar",
+          "tareas": [
+            "Asignar tareas a cada miembro del equipo"
+          ]
+        },
+        {
+          "name": "preparar recursos",
+          "condición": "El equipo no está listo para comenzar",
+          "tareas": [
+            "Preparar recursos y herramientas necesarias"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bucle",
+      "name": "revisión de progreso",
+      "condición": "El proyecto está completado",
+      "tareas": [
+        "Revisar el progreso del proyecto",
+        "Solicitar retroalimentación del equipo"
+      ]
+    },
+    {
+      "type": "evento",
+      "name": "fin",
+      "condicion": "proyecto completado"
+    }
+  ]
+}

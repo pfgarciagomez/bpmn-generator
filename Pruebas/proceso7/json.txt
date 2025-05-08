@@ -1,0 +1,78 @@
+{
+  "flow": [
+    {
+      "type": "evento",
+      "name": "inicio"
+    },
+    {
+      "type": "tarea",
+      "name": "Investigar tipos de viviendas",
+      "description": "Investigar los diferentes tipos de viviendas disponibles en el mercado"
+    },
+    {
+      "type": "pasarela",
+      "name": "Elegir tipo de vivienda",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Vivienda nueva",
+          "condición": "El cliente prefiere una vivienda nueva",
+          "tareas": [
+            "Investigar promociones de viviendas nuevas",
+            "Visitar parcelas de construcción"
+          ]
+        },
+        {
+          "name": "Vivienda usada",
+          "condición": "El cliente prefiere una vivienda usada",
+          "tareas": [
+            "Investigar promociones de viviendas usadas",
+            "Visitar propiedades en el mercado"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bucle",
+      "name": "Buscar vivienda",
+      "condición": "Hasta que se encuentre la vivienda adecuada",
+      "tareas": [
+        "Buscar en agencias inmobiliarias",
+        "Revisar anuncios en línea"
+      ]
+    },
+    {
+      "type": "pasarela",
+      "name": "Obtener financiación",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Financiación bancaria",
+          "condición": "El cliente tiene acceso a financiación bancaria",
+          "tareas": [
+            "Solicitar préstamo bancario",
+            "Revisar condiciones de la financiación"
+          ]
+        },
+        {
+          "name": "Financiación privada",
+          "condición": "El cliente no tiene acceso a financiación bancaria",
+          "tareas": [
+            "Investigar opciones de financiación privada",
+            "Revisar condiciones de la financiación"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tarea",
+      "name": "Realizar la compra",
+      "description": "Realizar la compra de la vivienda y cerrar el trámite"
+    },
+    {
+      "type": "evento",
+      "name": "fin",
+      "condicion": "La vivienda está lista para entrega"
+    }
+  ]
+}

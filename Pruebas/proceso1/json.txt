@@ -1,0 +1,83 @@
+{
+  "flow": [
+    {
+      "type": "evento",
+      "name": "inicio"
+    },
+    {
+      "type": "tarea",
+      "name": "Evaluación de necesidades del cliente",
+      "description": "Evaluar las necesidades del cliente y determinar la herramienta ERP/CRM adecuada"
+    },
+    {
+      "type": "pasarela",
+      "name": "Selección de herramienta ERP/CRM",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Selección de SAP",
+          "condición": "El cliente requiere una herramienta ERP compleja",
+          "tareas": [
+            "Implementar SAP",
+            "Personalizar SAP según las necesidades del cliente"
+          ]
+        },
+        {
+          "name": "Selección de Salesforce",
+          "condición": "El cliente requiere una herramienta CRM avanzada",
+          "tareas": [
+            "Implementar Salesforce",
+            "Personalizar Salesforce según las necesidades del cliente"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tarea",
+      "name": "Migración de datos",
+      "description": "Migrar datos desde los sistemas antiguos a la nueva herramienta ERP/CRM"
+    },
+    {
+      "type": "pasarela",
+      "name": "Pruebas y validación",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Pruebas funcionales",
+          "condición": "La herramienta ERP/CRM está funcionando correctamente",
+          "tareas": [
+            "Realizar pruebas funcionales",
+            "Identificar y corregir errores"
+          ]
+        },
+        {
+          "name": "Pruebas no funcionales",
+          "condición": "La herramienta ERP/CRM no está funcionando correctamente",
+          "tareas": [
+            "Investigar y corregir errores",
+            "Revisar la documentación de la herramienta"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tarea",
+      "name": "Formación y capacitación",
+      "description": "Formar y capacitar a los empleados del cliente en el uso de la nueva herramienta ERP/CRM"
+    },
+    {
+      "type": "bucle",
+      "name": "Seguimiento y soporte",
+      "condición": "El cliente requiere soporte técnico",
+      "tareas": [
+        "Realizar mantenimiento preventivo",
+        "Atender solicitudes de soporte técnico"
+      ]
+    },
+    {
+      "type": "evento",
+      "name": "fin",
+      "condicion": "El proyecto ha sido completado con éxito"
+    }
+  ]
+}

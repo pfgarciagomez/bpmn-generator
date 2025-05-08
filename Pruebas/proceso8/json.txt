@@ -1,0 +1,47 @@
+{
+"flow": [
+    {"type": "evento", "name": "inicio"},
+    {"type": "tarea", "name": "Revisar perfil del cliente", "description": "Revisar el perfil del cliente y sus objetivos financieros"},
+    {
+        "type": "pasarela",
+        "name": "Evaluación del perfil del cliente",
+        "type_pasarela": "XOR",
+        "ramas": [
+            {
+                "name": "Ofertar productos de inversión conservadora",
+                "condición": "El cliente busca productos de inversión conservadora",
+                "tareas": [
+                    "Revisar productos de inversión conservadora",
+                    "Ofertar productos de inversión conservadora"
+                ]
+            },
+            {
+                "name": "Ofertar productos de inversión arriesgada",
+                "condición": "El cliente busca productos de inversión arriesgada",
+                "tareas": [
+                    "Revisar productos de inversión arriesgada",
+                    "Ofertar productos de inversión arriesgada"
+                ]
+            },
+            {
+                "name": "Ofertar productos de inversión mixta",
+                "condición": "El cliente busca productos de inversión mixta",
+                "tareas": [
+                    "Revisar productos de inversión mixta",
+                    "Ofertar productos de inversión mixta"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "bucle",
+        "name": "Revisión de la oferta",
+        "condición": "El cliente está satisfecho con la oferta",
+        "tareas": [
+            "Revisar la oferta con el cliente",
+            "Realizar ajustes según sea necesario"
+        ]
+    },
+    {"type": "evento", "name": "fin", "condicion": "Oferta aprobada"}
+]
+}

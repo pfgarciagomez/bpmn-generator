@@ -1,0 +1,55 @@
+{
+  "flow": [
+    {
+      "type": "evento",
+      "name": "inicio"
+    },
+    {
+      "type": "tarea",
+      "name": "Preparar presentación",
+      "description": "Preparar la presentación y los materiales necesarios"
+    },
+    {
+      "type": "pasarela",
+      "name": "Evaluación de la feria",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Asistir a la feria",
+          "condición": "La feria es relevante para la consultora",
+          "tareas": [
+            "Montar stand",
+            "Realizar demostraciones en vivo"
+          ]
+        },
+        {
+          "name": "Buscar otras oportunidades",
+          "condición": "La feria no es relevante para la consultora",
+          "tareas": [
+            "Investigar otras ferias y eventos",
+            "Preparar presentación para otras oportunidades"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tarea",
+      "name": "Seguimiento post-evento",
+      "description": "Realizar seguimiento con los contactos generados"
+    },
+    {
+      "type": "bucle",
+      "name": "Conversaciones con asistentes",
+      "condición": "Hasta que se hayan hablado con todos los asistentes relevantes",
+      "tareas": [
+        "Hablar con asistentes",
+        "Registrar intereses y necesidades"
+      ]
+    },
+    {
+      "type": "evento",
+      "name": "fin",
+      "condicion": "Publicidad exitosa"
+    }
+  ]
+}

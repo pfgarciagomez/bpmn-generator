@@ -1,0 +1,58 @@
+{
+  "flow": [
+    {
+      "type": "evento",
+      "name": "inicio"
+    },
+    {
+      "type": "tarea",
+      "name": "Revisar necesidades de capacitación",
+      "description": "Identificar las áreas de mejora y necesidades de capacitación de los empleados"
+    },
+    {
+      "type": "pasarela",
+      "name": "Evaluación de necesidades",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Formación en línea",
+          "condición": "Las necesidades de capacitación requieren formación en línea",
+          "tareas": [
+            "Crear cuenta en plataforma de capacitación en línea",
+            "Asignar cursos y recursos de aprendizaje en línea"
+          ]
+        },
+        {
+          "name": "Formación presencial",
+          "condición": "Las necesidades de capacitación requieren formación presencial",
+          "tareas": [
+            "Reservar espacio para capacitación",
+            "Contratar ponentes y materiales"
+          ]
+        },
+        {
+          "name": "Otras opciones",
+          "condición": "Las necesidades de capacitación requieren otras opciones",
+          "tareas": [
+            "Investigar otras opciones de capacitación",
+            "Crear plan de acción"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bucle",
+      "name": "Seguimiento de progreso",
+      "condición": "Hasta que todos los empleados hayan completado la capacitación",
+      "tareas": [
+        "Revisar progreso de capacitación",
+        "Ofrecer apoyo y recursos adicionales si es necesario"
+      ]
+    },
+    {
+      "type": "evento",
+      "name": "fin",
+      "condicion": "Empleados capacitados"
+    }
+  ]
+}

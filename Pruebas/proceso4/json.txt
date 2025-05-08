@@ -1,0 +1,46 @@
+{
+  "flow": [
+    {
+      "type": "evento",
+      "name": "inicio"
+    },
+    {
+      "type": "tarea",
+      "name": "Revisar estilo y adherencia a convenciones",
+      "description": "Revisar código para asegurar estilo y adherencia a convenciones del lenguaje"
+    },
+    {
+      "type": "tarea",
+      "name": "Evaluar eficiencia y escalabilidad",
+      "description": "Evaluar código para asegurar eficiencia y escalabilidad"
+    },
+    {
+      "type": "pasarela",
+      "name": "Revisión de pruebas unitarias",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Comprobar pruebas unitarias",
+          "condición": "Las pruebas unitarias están completas",
+          "tareas": [
+            "Ejecutar pruebas unitarias",
+            "Revisar resultados de pruebas unitarias"
+          ]
+        },
+        {
+          "name": "Revisar pruebas unitarias",
+          "condición": "Las pruebas unitarias no están completas",
+          "tareas": [
+            "Crear pruebas unitarias",
+            "Ejecutar pruebas unitarias"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "evento",
+      "name": "fin",
+      "condición": "Código revisado y pruebas unitarias completas"
+    }
+  ]
+}

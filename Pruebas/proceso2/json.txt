@@ -1,0 +1,51 @@
+{
+  "flow": [
+    {
+      "type": "evento",
+      "name": "inicio"
+    },
+    {
+      "type": "tarea",
+      "name": "Preparar la evaluación",
+      "description": "Preparar la evaluación y los documentos necesarios"
+    },
+    {
+      "type": "pasarela",
+      "name": "Evaluación del desempeño",
+      "type_pasarela": "XOR",
+      "ramas": [
+        {
+          "name": "Evaluación satisfactoria",
+          "condición": "El empleado ha cumplido con los objetivos y metas establecidas",
+          "tareas": [
+            "Revisar KPIs",
+            "Evaluar el desempeño del empleado"
+          ]
+        },
+        {
+          "name": "Evaluación no satisfactoria",
+          "condición": "El empleado no ha cumplido con los objetivos y metas establecidas",
+          "tareas": [
+            "Revisar KPIs",
+            "Evaluar el desempeño del empleado",
+            "Crear un plan de acción para mejorar"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bucle",
+      "name": "Revisión de los objetivos",
+      "condición": "Hasta que todos los objetivos estén actualizados",
+      "tareas": [
+        "Revisar objetivos",
+        "Actualizar objetivos si es necesario"
+      ]
+    },
+    {
+      "type": "evento",
+      "name": "fin",
+      "condicion": "Evaluación concluida"
+    }
+  ]
+}
